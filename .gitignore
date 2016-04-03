@@ -73,3 +73,22 @@ media
 opt
 readme
 todo
+
+#ignore .metadata 4 macbook
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+media
+.bash_history
+.CFUserTextEncoding
+.DS_Store
+.viminfo
+.ssh
+.bash_sessions
+.oracle_jre_usage
+.sogouinput
