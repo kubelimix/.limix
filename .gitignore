@@ -91,3 +91,5 @@ media
 .bash_sessions
 .oracle_jre_usage
 .sogouinput
+.NERDTreeBookmarks
+.vim/.netrwhist

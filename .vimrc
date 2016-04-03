@@ -8,32 +8,34 @@
 " #############################################################################
 " =============================================================================
 " global settings
+let &termencoding=&encoding
 syntax on
+syntax enable
+set nocompatible
+set fileencodings=utf-8,ucs-bom,gbk,cp936
+set fileencoding=utf-8
+filetype plugin indent on
 " =============================================================================
-" vundle插件管理
-set nocompatiable
+" vundle plugin manage
+" plugin 3 kind
+" vim-scripts user github repos,other user github repos,not on github
+" set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Let Vundle manage itself
 Plugin 'gmarik/vundle'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
-filetype plugin indent on
 " =============================================================================
-" LIMIX_PLUGIN pathogen you can also use the vundle for help
-" -----------------------------------------------------------------------------
+" pathogen plugin rumtime path manage
 " use the plugin pathogen to manage the vim plugins.
 " call pathogen#infect() -- modified by limingxin 2012-12-05
 execute pathogen#infect('bundle/{},~/media/src/vim/bundle/{}')
-" syntax on
-" filetype plugin indent on
 " =============================================================================
-" 文件字符处理-----------------------------------------------------------------------
-let &termencoding=&encoding
-set fileencodings=utf-8,ucs-bom,gbk,cp936
-set fileencoding=utf-8
-" 基本信息处理-----------------------------------------------------------------------
+" common things----------------------------------------------------------------
 set nowrap
 set noswapfile
 set textwidth=120
@@ -42,42 +44,29 @@ set tabstop=2
 set autoindent
 set cindent
 set nu
-set nocompatible
 set showmode
 set guioptions-=m
 set guioptions-=T
 set ruler
 set pastetoggle=<F10>
 set clipboard=unnamed
-" show the space and tab.
+" show the space and tab
 set listchars=tab:>-,trail:-
 :inoremap <F7> <C-R>=strftime("%F")<CR>
 " =============================================================================
-" LIMIX_PLUGIN pathogen you can also use the vundle for help
-" -----------------------------------------------------------------------------
-" use the plugin pathogen to manage the vim plugins.
-" call pathogen#infect() -- modified by limingxin 2012-12-05
-execute pathogen#infect('bundle/{},~/media/src/vim/bundle/{}')
-" syntax on
-" filetype plugin indent on
-" =============================================================================
-" LIMIX_PLUGIN vimwiki
-" -----------------------------------------------------------------------------
-" -- set the vimwiki main path,and the html file path.
+" plugin.vimwiki
 let g:vimwiki_list=[{'path':'~/media/vimwiki/','template_path':'~/media/vimwiki/templates/','template_default':'default','template_ext':'.tpl','auto export':'1','path_html':'~/media/vimwiki/html'},{'path':'~/media/git/wiki','syntax':'markdown','ext':'.md'}]
 let g:vimwiki_browsers=['ff']
+" =============================================================================
+" plugin.nerdtree
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=30
+map <F2> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
 " =============================================================================
 " limix test 测试使用
 " -----------------------------------------------------------------------------
 " :map <F9> :if exists("syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> end if <CR>
-" =============================================================================
-" plugin.netrw
-" set nocompatiable
-" filetype plugin on
-" =============================================================================
-" NERDTree
-map <F2> :NERDTreeMirror<CR>
-map <F3> :NERDTreeToggle<CR>
 " =============================================================================
 " TMUX manage
 if exists('$TMUX')
