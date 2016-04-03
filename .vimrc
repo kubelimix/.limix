@@ -9,7 +9,26 @@
 " =============================================================================
 " global settings
 syntax on
-filetype plugin on
+" =============================================================================
+" vundle插件管理
+set nocompatiable
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+" Let Vundle manage itself
+Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()
+filetype plugin indent on
+" =============================================================================
+" LIMIX_PLUGIN pathogen you can also use the vundle for help
+" -----------------------------------------------------------------------------
+" use the plugin pathogen to manage the vim plugins.
+" call pathogen#infect() -- modified by limingxin 2012-12-05
+execute pathogen#infect('bundle/{},~/media/src/vim/bundle/{}')
+" syntax on
+" filetype plugin indent on
+" =============================================================================
 " 文件字符处理-----------------------------------------------------------------------
 let &termencoding=&encoding
 set fileencodings=utf-8,ucs-bom,gbk,cp936
@@ -39,30 +58,14 @@ set listchars=tab:>-,trail:-
 " use the plugin pathogen to manage the vim plugins.
 " call pathogen#infect() -- modified by limingxin 2012-12-05
 execute pathogen#infect('bundle/{},~/media/src/vim/bundle/{}')
-syntax on
-filetype plugin indent on
+" syntax on
+" filetype plugin indent on
 " =============================================================================
 " LIMIX_PLUGIN vimwiki
 " -----------------------------------------------------------------------------
 " -- set the vimwiki main path,and the html file path.
 let g:vimwiki_list=[{'path':'~/media/vimwiki/','template_path':'~/media/vimwiki/templates/','template_default':'default','template_ext':'.tpl','auto export':'1','path_html':'~/media/vimwiki/html'},{'path':'~/media/git/wiki','syntax':'markdown','ext':'.md'}]
 let g:vimwiki_browsers=['ff']
-" =============================================================================
-" LIMIX_PLUGIN eclim 插件相关设置部分.
-" -----------------------------------------------------------------------------
-" -- maps Ctrl-F to eclipse's Ctrl-Shift-R key binding (find resource)
-nmap <silent> <c-f> :call eclim#vimplugin#FeedKeys('Ctrl+Shift+R')<cr>
-" maps Ctrl-M to eclipse's Ctrl-M binding to maximize the editor,
-" Supplying 1 as the arg will result in the refocusing of gvim after the eclipse key
-" binding has been executed.
-nmap <silent> <c-m> :call eclim#vimplugin#FeedKeys('Ctrl+M', 1)<cr>
-let g:EclimTodoSearchPattern = '\(\<fixme\>\|\<todo\>\)\c'
-" =============================================================================
-" LIMIX_PLUGIN vjde 插件相关设置部分.
-" -----------------------------------------------------------------------------
-" defined by limix for vjde 2012-09-02 begin
-" let g:vjde lib path="lib/struts.jar:
-" defined by limix for vjde 2012-09-02 end
 " =============================================================================
 " limix test 测试使用
 " -----------------------------------------------------------------------------
