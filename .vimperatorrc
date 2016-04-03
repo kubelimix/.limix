@@ -1,0 +1,34 @@
+"3.8.2 (created: 2014/02/13 23:52:43)
+
+map mail tmail.iflytek.com
+map baidu twww.baidu.com
+map wiki :!gvim
+map mp3 tfm.baidu.com
+map limixpre :!pre_workspace.sh
+map ww gh
+map ws01 :!workspace-switcher.sh<Space>01
+map ws02 :!workspace-switcher.sh<Space>02
+map ws03 :!workspace-switcher.sh<Space>03
+map ws04 :!workspace-switcher.sh<Space>04
+map ws05 :!workspace-switcher.sh<Space>05
+map ws06 :!workspace-switcher.sh<Space>06
+map limixprox :!openproxy.sh
+map limixrest :emenu<Space>Tools..Completely<Space>disable<Space>FoxyProxy
+map limixproy :emenu<Space>Tools..Use<Space>proxies<Space>based<Space>on<Space>their<Space>pre-defined<Space>patterns<Space>and<Space>priorities
+"set errorbells
+"set focuscontent
+"set followhints=1
+"set "nextpattern=\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,^下一页$"
+"set "previouspattern=\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,^上一页$"
+"set tabnumbers
+"set titlestring=无论何事,只要对他有无限的热情你就会取得成功
+"source! /home/limix/.vimperatorrc.local
+"autocmd BookmarkAdd .* js window.openDialog('chrome://diigotb/content/addBookmark.xul','addBookmark','width=500,height=380,resizable=yes,minimizable',context).focus();
+"添加监听,当值改变的时候并且
+"autocmd LocationChange .* js document.title=("Tags:"+document.title+" "+ context.bookmark.tags);
+"autocmd LocationChange .* js document.title=("Tags:"+document.title+" "+ diigo.Sidebar.currentContext.bookmark.tags);
+"javascript var piId =setInterval(function(context,document){(context && context.bookmark.tags) ? document.title="Tags:"+document.title+" "+context.bookmark.tags : ''},100); "alert(piId); 
+"添加必要的javascript
+"javascript var limix = {};
+"vim: set ft=vimperator
+"map limixy :emenu<Space>Bookmarks.Bookmarks<Space>Toolbar.youdao

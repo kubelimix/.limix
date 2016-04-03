@@ -1,0 +1,75 @@
+# .bash_profile
+# .bashrc
+# .gitconfig
+# .gitignore
+# .tmux.conf
+# .vimperator
+# .vimperatorrc
+# .vimrc
+.ICEauthority
+.Xauthority
+.adobe
+.bash_history
+.cache
+.config
+.dbus
+.dmrc
+.eclipse
+.esd_auth
+.fontconfig
+.gconf
+.gconfd
+.gem
+.gemrc
+.gimp-2.6
+.gitiflytek
+.gnome
+.gnome2
+.gnupg
+.gradle
+.gstreamer-0.10
+.gtk-bookmarks
+.irb-history
+.java
+.kingsoft
+.lesshst
+.limix.py
+.limix_current_ws
+.limix_pre_ws
+.local
+.m2
+.macromedia
+.mozilla
+.nautilus
+.netrc
+.npm
+.p2
+.pip
+.pki
+.profile
+.pulse-cookie
+.pulse
+.purple
+.rvm
+.sangfor
+.setenv
+.ssh
+.subversion
+.swt
+.themes
+.thunderbird
+.tomboy.log
+.tomboy
+.toprc
+.vim
+.viminfo
+dict
+etc
+git
+iflytek
+job
+job001
+media
+opt
+readme
+todo
