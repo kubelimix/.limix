@@ -57,3 +57,5 @@ alias openwifi="sudo wpa_supplicant -Dwext -iwlan0 -c etc/network/wpa_supplicant
 alias openwifi4work="sudo wpa_supplicant -Dwext -iwlan0 -c etc/network/iflytek.conf -B;echo 'Begin to obtain Ip from the route wait for a moment'; sudo dhclient wlan0; echo Okey"
 alias closewifi="sudo ps -ef | grep wpa_supplicant | grep -v grep | awk '{print $2}' | xargs sudo kill -9;sudo ps -ef | grep dhclient | grep -v grep | awk '{print $2}' | xargs sudo kill -9"
 alias clear='printf "\ec"'
+SPLIT_HOME=`pwd`
+alias h='cd $SPLIT_HOME'
