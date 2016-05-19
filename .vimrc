@@ -29,6 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 call vundle#end()
+filetype on
 " =============================================================================
 " pathogen plugin rumtime path manage
 " use the plugin pathogen to manage the vim plugins.
