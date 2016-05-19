@@ -13,6 +13,7 @@
 .cache
 .config
 .dbus
+.ivy2
 .dmrc
 .eclipse
 .esd_auth
@@ -93,3 +94,9 @@ media
 .sogouinput
 .NERDTreeBookmarks
 .vim/.netrwhist
+.sbt
+job002
+data
+limix
+.vimperator/info
+uDigWorkspace

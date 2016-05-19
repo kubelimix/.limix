@@ -17,7 +17,7 @@ LIMIX_BIN=~/media/bin
 LIMIX_WS=~/media/workspace
 
 # 主目录定义
-JAVA_HOME=$LIMIX_OPT/jdk1.7.0_67
+JAVA_HOME=$LIMIX_OPT/java/current
 M2_HOME=$LIMIX_OPT/apache-maven-3.2.3
 HADOOP_HOME=$LIMIX_OPT/hadoop-2.6.0
 HBASE_HOME=$LIMIX_OPT/hbase-1.2.0
@@ -30,10 +30,11 @@ BROWSER=/usr/bin/firefox
 OOZIE_URL=http://localhost:11000/oozie
 HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 HISTTIMEFORMAT='%F %T  '
+SBT_HOME=$LIMIX_OPT/sbt
 
 # 重定义
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/user/sunflower/dcfile/lib-native
-PATH=$PATH:$LIMIX_BIN:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$M2_HOME/bin:$PB_HOME/bin
+PATH=$PATH:$LIMIX_BIN:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$M2_HOME/bin:$PB_HOME/bin:$SBT_HOME/bin
 
 # 导出
 export LD_LIBRARY_PATH
