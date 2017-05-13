@@ -8,6 +8,7 @@
 # .vimrc
 .ICEauthority
 .Xauthority
+.android
 .adobe
 .bash_history
 .cache
