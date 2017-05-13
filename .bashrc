@@ -30,8 +30,9 @@ HBASE_HOME=$LIMIX_OPT/hbase/current
 PB_HOME=$LIMIX_OPT/protobuf/current
 PIG_HOME=$LIMIX_OPT/pig/current
 ROCKETMQ_HOME=$LIMIX_OPT/rocketmq/current
+SBT_HOME=$LIMIX_OPT/sbt
 
-PATH=$PATH:$LIMIX_BIN:$RAR_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin
+PATH=$PATH:$LIMIX_BIN:$RAR_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$SBT_HOME/bin
 PATH=$PATH:$HADOOP_HOME/bin:$HBASE_HOME/bin:$PB_HOME/bin
 
 # 其他定义
@@ -40,7 +41,7 @@ BROWSER=/usr/bin/firefox
 OOZIE_URL=http://localhost:11000/oozie
 HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 HISTTIMEFORMAT='%F %T  '
-export SVN_EDITOR=vim
+SVN_EDITOR=vim
 
 export C_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin
 export CPLUS_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin:.:/Users/limix/Documents/svn/ZY_ISPP/Trunk/Development/Source/JniForEngine/cata/include
@@ -50,10 +51,12 @@ DYLD_LIBRARY_PATH=/usr/local/java
 # 导出
 export LD_LIBRARY_PATH
 export LIMIX_BIN LIMIX_OPT LIMIX_REPO LIMIX_TMP LIMIX_CORE
-export RAR_HOME JAVA_HOME GRADLE_HOME M2_HOME HADOOP_HOME HBASE_HOME PB_HOME PIG_HOME ROCKETMQ_HOME ES_HOME
-export BROWSER OOZIE_URL HADOOP_CLASSPATH
+export RAR_HOME JAVA_HOME GRADLE_HOME M2_HOME 
+export HADOOP_HOME HBASE_HOME PB_HOME PIG_HOME ROCKETMQ_HOME ES_HOME
+export HADOOP_CLASSPATH BROWSER OOZIE_URL 
 export HISTTIMEFORMAT
 export PATH
+export SVN_EDITOR
 
 # 别名
 alias ..='cd ..'
@@ -62,6 +65,7 @@ alias repo='cd $LIMIX_REPO'
 alias opt='cd $LIMIX_OPT'
 alias tmp='cd $LIMIX_TMP'
 alias ws='cd $LIMIX_WS'
+alias c='cd $LIMIX_CORE'
 alias mv2repo='mv -t $LIMIX_REPO/'
 alias mv2opt='mv -t $LIMIX_OPT/'
 alias openwifi="sudo wpa_supplicant -Dwext -iwlan0 -c etc/network/wpa_supplicant.conf -B;echo 'Begin to obtain Ip from the route wait for a moment'; sudo dhclient wlan0; echo Okey"
@@ -75,6 +79,7 @@ alias ssh17="ssh root@192.168.84.17"
 alias ssh16="ssh root@192.168.84.16"
 alias ssh151="ssh root@192.168.84.151"
 alias ssh196="ssh root@192.168.84.196"
-alias c="cd ~/media/git/core"
 alias job2="cd ~/Documents/job2"
 alias job5="cd ~/Documents/job5"
+SPLIT_HOME=`pwd`
+alias h='cd $SPLIT_HOME'
