@@ -2,7 +2,7 @@ if (!limix){
   var limix = {}
 }
 limix.tags = function(){
-  	if(document.title.contains("limix.tags")){
+  	if(document && document.title && document.title.contains("limix.tags")){
 	    if (!(typeof context == "undefined")){
 	        document.title = document.title.replace(/limix.tags[^\]]*/g,"limix.tags[" + context.bookmark.tags);
 		}
@@ -12,4 +12,4 @@ limix.tags = function(){
 		}
 	}
 };
-limix.tags.piId = setInterval(limix.tags,2000);
+// limix.tags.piId = setInterval(limix.tags,2000);
