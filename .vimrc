@@ -14,6 +14,7 @@ syntax enable
 set nocompatible
 set fileencodings=utf-8,ucs-bom,gbk,cp936
 set fileencoding=utf-8
+set paste
 filetype plugin indent on
 " =============================================================================
 " vundle plugin manage
@@ -69,16 +70,16 @@ map <F3> :NERDTreeToggle<CR>
 " :map <F9> :if exists("syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> end if <CR>
 " =============================================================================
 " TMUX manage
-if exists('$TMUX')
-	set term=screen-256color:w
-endif
-if exists('$ITERM_PROFILE')
-  if exists('$TMUX') 
-    let &amp;t_SI = "<Esc>[3 q"
-    let &amp;t_EI = "<Esc>[0 q"
-  else
-    let &amp;t_SI = "<Esc>]50;CursorShape=1x7"
-    let &amp;t_EI = "<Esc>]50;CursorShape=0x7"
-  endif
-end
+" if exists('$TMUX')
+"	set term=screen-256color:w
+" endif
+" if exists('$ITERM_PROFILE')
+"   if exists('$TMUX') 
+"     let &amp;t_SI = "<Esc>[3 q"
+"     let &amp;t_EI = "<Esc>[0 q"
+"   else
+"     let &amp;t_SI = "<Esc>]50;CursorShape=1x7"
+"     let &amp;t_EI = "<Esc>]50;CursorShape=0x7"
+"   endif
+" end
 " =============================================================================
