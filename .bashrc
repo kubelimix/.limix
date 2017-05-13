@@ -10,35 +10,47 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+#主目录定义
 LIMIX_REPO=~/media/repo
 LIMIX_OPT=~/media/opt
 LIMIX_TMP=~/tmp
 LIMIX_BIN=~/media/bin
 LIMIX_WS=~/media/workspace
+LIMIX_CORE=~/media/core
 
 # 主目录定义
-JAVA_HOME=$LIMIX_OPT/jdk1.7.0_67
-M2_HOME=$LIMIX_OPT/apache-maven-3.2.3
-HADOOP_HOME=$LIMIX_OPT/hadoop-2.6.0
-HBASE_HOME=$LIMIX_OPT/hbase-1.2.0
-PB_HOME=$LIMIX_OPT/protobuf
-PIG_HOME=$LIMIX_OPT/pig-0.15.0
-ROCKETMQ_HOME=$LIMIX_OPT/alibaba-rocketmq
+RAR_HOME=$LIMIX_OPT/rar/current
+JAVA_HOME=$LIMIX_OPT/java/current
+GRADLE_HOME=$LIMIX_OPT/gradle/current
+M2_HOME=$LIMIX_OPT/maven/current
+ANT_HOME=$LIMIX_OPT/ant/current
+ES_HOME=$LIMIX_OPT/elasticsearch/current
+HADOOP_HOME=$LIMIX_OPT/hadoop/current
+HBASE_HOME=$LIMIX_OPT/hbase/current
+PB_HOME=$LIMIX_OPT/protobuf/current
+PIG_HOME=$LIMIX_OPT/pig/current
+ROCKETMQ_HOME=$LIMIX_OPT/rocketmq/current
+
+PATH=$PATH:$LIMIX_BIN:$RAR_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin
+PATH=$PATH:$HADOOP_HOME/bin:$HBASE_HOME/bin:$PB_HOME/bin
+
 # 其他定义
 PYTHONSTARTUP=.limix.py
 BROWSER=/usr/bin/firefox
 OOZIE_URL=http://localhost:11000/oozie
 HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 HISTTIMEFORMAT='%F %T  '
+export SVN_EDITOR=vim
 
-# 重定义
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/user/sunflower/dcfile/lib-native
-PATH=$PATH:$LIMIX_BIN:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$M2_HOME/bin:$PB_HOME/bin
+export C_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin
+export CPLUS_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin:.:/Users/limix/Documents/svn/ZY_ISPP/Trunk/Development/Source/JniForEngine/cata/include
+LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH:/user/sunflower/dcfile/lib-native:/usr/local/lib
+DYLD_LIBRARY_PATH=/usr/local/java
 
 # 导出
 export LD_LIBRARY_PATH
-export LIMIX_BIN LIMIX_OPT LIMIX_REPO LIMIX_TMP 
-export JAVA_HOME HADOOP_HOME HBASE_HOME PB_HOME PIG_HOME ROCKETMQ_HOME M2_HOME
+export LIMIX_BIN LIMIX_OPT LIMIX_REPO LIMIX_TMP LIMIX_CORE
+export RAR_HOME JAVA_HOME GRADLE_HOME M2_HOME HADOOP_HOME HBASE_HOME PB_HOME PIG_HOME ROCKETMQ_HOME ES_HOME
 export BROWSER OOZIE_URL HADOOP_CLASSPATH
 export HISTTIMEFORMAT
 export PATH
@@ -56,3 +68,13 @@ alias openwifi="sudo wpa_supplicant -Dwext -iwlan0 -c etc/network/wpa_supplicant
 alias openwifi4work="sudo wpa_supplicant -Dwext -iwlan0 -c etc/network/iflytek.conf -B;echo 'Begin to obtain Ip from the route wait for a moment'; sudo dhclient wlan0; echo Okey"
 alias closewifi="sudo ps -ef | grep wpa_supplicant | grep -v grep | awk '{print $2}' | xargs sudo kill -9;sudo ps -ef | grep dhclient | grep -v grep | awk '{print $2}' | xargs sudo kill -9"
 alias clear='printf "\ec"'
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias ssh18="ssh root@192.168.84.18"
+alias ssh17="ssh root@192.168.84.17"
+alias ssh16="ssh root@192.168.84.16"
+alias ssh151="ssh root@192.168.84.151"
+alias ssh196="ssh root@192.168.84.196"
+alias c="cd ~/media/git/core"
+alias job2="cd ~/Documents/job2"
+alias job5="cd ~/Documents/job5"
