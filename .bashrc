@@ -17,6 +17,8 @@ LIMIX_TMP=~/tmp
 LIMIX_BIN=~/media/bin
 LIMIX_WS=~/media/workspace
 LIMIX_CORE=~/media/core
+LIMIX_GIT=~/media/git
+LIMIX_GITHUB=$LIMIX_GIT/github
 
 # 主目录定义
 RAR_HOME=$LIMIX_OPT/rar/current
@@ -27,13 +29,16 @@ ANT_HOME=$LIMIX_OPT/ant/current
 ES_HOME=$LIMIX_OPT/elasticsearch/current
 HADOOP_HOME=$LIMIX_OPT/hadoop/current
 HBASE_HOME=$LIMIX_OPT/hbase/current
+HIVE_HOME=$LIMIX_OPT/hive/current
+SQOOP_HOME=$LIMIX_OPT/sqoop/current
+SPARK_HOME=$LIMIX_OPT/spark/current
 PB_HOME=$LIMIX_OPT/protobuf/current
 PIG_HOME=$LIMIX_OPT/pig/current
 ROCKETMQ_HOME=$LIMIX_OPT/rocketmq/current
 SBT_HOME=$LIMIX_OPT/sbt
 
 PATH=$PATH:$LIMIX_BIN:$RAR_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$SBT_HOME/bin
-PATH=$PATH:$HADOOP_HOME/bin:$HBASE_HOME/bin:$PB_HOME/bin
+PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$SQOOP_HOME/bin:$HIVE_HOME/bin:$PB_HOME/bin
 
 # 其他定义
 PYTHONSTARTUP=.limix.py
@@ -42,6 +47,7 @@ OOZIE_URL=http://localhost:11000/oozie
 HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 HISTTIMEFORMAT='%F %T  '
 SVN_EDITOR=vim
+export MAVEN_OPTS='-Xms256m -Xmx1024m'
 
 export C_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin
 export CPLUS_INCLUDE_PATH=$JAVA_HOME/include:$JAVA_HOME/include/darwin:.:/Users/limix/Documents/svn/ZY_ISPP/Trunk/Development/Source/JniForEngine/cata/include
@@ -81,5 +87,10 @@ alias ssh151="ssh root@192.168.84.151"
 alias ssh196="ssh root@192.168.84.196"
 alias job2="cd ~/Documents/job2"
 alias job5="cd ~/Documents/job5"
+alias github="cd $LIMIX_GITHUB"
 SPLIT_HOME=`pwd`
 alias h='cd $SPLIT_HOME'
+
+# app.hue
+export LDFLAGS=-L/usr/local/opt/openssl/lib && export CPPFLAGS=-I/usr/local/opt/openssl/include
+
