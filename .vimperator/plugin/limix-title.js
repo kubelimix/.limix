@@ -13,3 +13,6 @@ limix.tags = function(){
 	}
 };
 // limix.tags.piId = setInterval(limix.tags,2000);
+limix.shadowsocket = function(){
+	var password = document.getElementById("pwusa").innerHTML
+}

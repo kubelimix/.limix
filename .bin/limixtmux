@@ -1,0 +1,37 @@
+#!/bin/bash
+cmd=$(which tmux)
+session=hadoop
+
+if [ -z $cmd ]; then
+	echo "you need to install tmux"
+	exit 1
+fi
+PATH_BIN=$LIMIX_BIN
+PATH_OPT=$LIMIX_OPT
+PATH_CORE=$LIMIX_CORE
+INIT_SCRIPT="bash;export SPLIT_HOME=`pwd`"
+
+
+$cmd has -t $session
+if [ $? != 0 ]; then
+# $cmd new -d -n vim -s $session "vim"
+# new: new-sesion, -d deattach, -n:window name,-s session-name -t target-session ,shell command
+# new-session [-AdDP] [-F format] [-n window-name] [-s session-name] [-t target-session] [-x width] [-y height] [shell-command]
+# 创建新的会话
+$cmd new -d -n home -c $HOME -s $session "bash"
+$cmd neww -n spark -c $SPARK_HOME -t $session:1 "$INIT_SCRIPT"
+$cmd neww -n kafka -c $KAFKA_HOME -t $session:2 "$INIT_SCRIPT"
+$cmd neww -n hadoop -c $HADOOP_HOME -t $session:3 "$INIT_SCRIPT"
+$cmd neww -n hbase -c $HBASE_HOME -t $session:4 "$INIT_SCRIPT"
+$cmd neww -n hive -c $HIVE_HOME -t $session:5 "$INIT_SCRIPT"
+$cmd neww -n oozie -c $OOZIE_HOME -t $session:6 "$INIT_SCRIPT"
+$cmd neww -n sqoop -c $SQOOP_HOME -t $session:7 "$INIT_SCRIPT"
+$cmd neww -n kylin -c $KYLIN_HOME -t $session:8 "$INIT_SCRIPT"
+$cmd neww -n hue -c $HUE_HOME -t $session:9 "$INIT_SCRIPT"
+
+$cmd selectw -t $session:0
+fi
+
+# 挂载会话
+$cmd att -t $session
+exit 0
