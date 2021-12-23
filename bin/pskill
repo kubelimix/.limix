@@ -1,0 +1,8 @@
+#!/bin/bash
+PID=`ps aux | grep "$@" | grep -v grep | grep -v pskill | awk '{print $2}'`
+echo $PID
+if ['' ne $PID ]; then
+  kill -9 $PID
+else
+  echo "nothing to be kill";
+fi

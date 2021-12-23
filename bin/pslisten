@@ -1,0 +1,3 @@
+#!/bin/bash
+PID=`ps aux | grep $1 | grep -v grep | grep -v pslisten | awk '{print $2}'`
+lsof -P -p $PID | grep LISTEN

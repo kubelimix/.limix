@@ -1,0 +1,3 @@
+#!/bin/bash
+pid=`ps aux | grep "$@" | grep -v grep |grep -v pslsof | awk '{print $2}'`
+lsof -p $pid

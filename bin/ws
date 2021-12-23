@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+workspaces['hue']=''
+workspaces['saiku']='/Users/limix/Documents/job9/svn/PS_ZY_BDAP/Trunk/Development/Source/BigSmart/saiku'
+workspace=/Users/limix
+if [ $# == 1 ] ; then
+  echo ${workspaces[$1]}
+elif [ $# > 1 ] ; then
+ echo ${workspace}
+else
+ echo ${workspace}
+fi
+cd $workspace

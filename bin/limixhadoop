@@ -1,0 +1,33 @@
+#!/bin/bash
+if [ $# = 0 ]; then
+  echo "Usage: limixhadoop [<options>] <command> [<args>]"
+  echo "Options:"
+  echo "  --h             帮助信息"
+  echo "  --hosts HOSTS   Override the list in 'regionservers' file"
+  echo ""
+  echo "Commands:"
+  echo "Some commands take arguments. Pass no args or -h for usage."
+  echo "  start           启动任务"
+  echo "  stop            停止任务"
+  exit 1
+fi
+
+# get arguments
+COMMAND="$1"
+echo $COMMAND
+shift
+
+stop_hive() {
+  pid=`jps -ml | grep hive | grep -v grep | awk '{print $1}'`;
+	echo "the pid is $pid";
+	if [[ -n $pid ]]; then
+	  echo "===stop the hive==============================================="
+	 	kill -15 $pid
+	fi
+}
+
+if [[ "$COMMAND" = "stop" ]]; then
+	if [[ "$1" = "hive" ]]; then
+		stop_hive 
+	fi
+fi

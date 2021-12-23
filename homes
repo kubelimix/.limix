@@ -1,0 +1,22 @@
+#!/bin/bash
+export LIMIX_MEDIA=~/media
+export LIMIX_OPT=$LIMIX_MEDIA/opt
+export LIMIX_REPO=$LIMIX_MEDIA/repo
+export LIMIX_GIT=$LIMIX_MEDIA/git
+export LIMIX_GITHUB=$LIMIX_MEDIA/git/github
+export LIMIX_WIKI=$LIMIX_GIT/wiki
+export LIMIX_DOT=~/.limix
+export LIMIX_BIN=$LIMIX_DOT/bin
+
+export JAVA_HOME=/Users/limix/media/opt/jdk8
+export GO_HOME=/opt/homebrew/Cellar/go@1.16/1.16.12
+export NODE_HOME=/opt/homebrew/Cellar/node@12/12.22.7
+export M2_HOME=$LIMIX_OPT/maven/current
+
+# 云原生
+export DOCKER_HOME=/opt/homebrew/Cellar/docker/20.10.11
+export MINIKUBE_HOME=/opt/homebrew/Cellar/minikube/1.24.0
+export KUBEBUILDER_HOME=/opt/homebrew/Cellar/kubebuilder/3.2.0
+
+# 实现自动提取所有的HOME以及相关元素
+export PATH=$PATH:$LIMIX_BIN:$JAVA_HOME/bin:$GO_HOME/bin:$NODE_HOME/bin:$M2_HOME/bin:$DOCKER_HOME/bin:$MINIKUBE_HOME/bin:$KUBEBUILDER_HOME/bin
