@@ -1,18 +1,12 @@
 #!/bin/bash
 cmd=$(which tmux)
-session=hadoop
+session=default
 
 if [ -z $cmd ]; then
-	echo "you need to install tmux"
-	exit 1
+  echo "you need to install tmux"
+  exit 1
 fi
-PATH_BIN=$LIMIX_BIN
-PATH_OPT=$LIMIX_OPT
-PATH_CORE=$LIMIX_CORE
-INIT_SCRIPT="source ~/.bashrc;bash;export SPLIT_HOME=`pwd`"
-export TM_HOME=/Users/limix/git/tm
-export ZEEBE_OPERATE_HOME=$LIMIX_OPT/camunda-operate-1.0.0/
-
+INIT_SCRIPT="source ~/.zshrc;zsh;export SPLIT_HOME=`pwd`;echo $SPLIT_HOME"
 
 $cmd has -t $session
 if [ $? != 0 ]; then
@@ -20,22 +14,10 @@ if [ $? != 0 ]; then
 # new: new-sesion, -d deattach, -n:window name,-s session-name -t target-session ,shell command
 # new-session [-AdDP] [-F format] [-n window-name] [-s session-name] [-t target-session] [-x width] [-y height] [shell-command]
 # 创建新的会话
-$cmd new -d -n home -c $HOME -s $session "bash"
-$cmd neww -n hadoop -c $HADOOP_HOME -t $session:1 "$INIT_SCRIPT"
-$cmd neww -n hive -c $HIVE_HOME -t $session:2 "$INIT_SCRIPT"
-$cmd neww -n spark -c $SPARK_HOME -t $session:3 "$INIT_SCRIPT"
-$cmd neww -n presto-c $PRESTO_HOME -t $session:4 "$INIT_SCRIPT"
-$cmd neww -n kafka -c $KAFKA_HOME -t $session:7 "$INIT_SCRIPT"
-#$cmd neww -n operate -c $ZEEBE_OPERATE_HOME -t $session:5 "$INIT_SCRIPT"
-#$cmd neww -n zeebe -c $ZEEBE_HOME -t $session:6 "$INIT_SCRIPT"
-#$cmd neww -n hbase -c $HBASE_HOME -t $session:4 "$INIT_SCRIPT"
-#$cmd neww -n oozie -c $OOZIE_HOME -t $session:6 "$INIT_SCRIPT" \; split-window -c $OOZIE_HOME -d;
-#$cmd neww -n sqoop -c $SQOOP_HOME -t $session:7 "$INIT_SCRIPT"
-#$cmd neww -n kylin -c $KYLIN_HOME -t $session:8 "$INIT_SCRIPT"
-#$cmd neww -n hue -c $HUE_HOME -t $session:9 "$INIT_SCRIPT"
-$cmd neww -n wiki -c $WIKI_HOME -t $session:10 "$INIT_SCRIPT" \; split-window -c $WIKI_HOME -d;
-#$cmd neww -n tm -c $TM_HOME -t $session:11 "$INIT_SCRIPT" \; split-window -c $TM_HOME -d;
-$cmd selectw -t $session:0
+$cmd new -d -n home -c $HOME -s $session
+$cmd neww -n wiki -e "SPLIT_HOME=$LIMIX_WIKI" -c $LIMIX_WIKI -t $session:2 \; splitw -c $LIMIX_WIKI -e "SPLIT_HOME=$LIMIX_WIKI" -d;
+$cmd neww -n github -e "SPLIT_HOME=$LIMIX_GITHUB" -c $LIMIX_GITHUB -t $session:3 \; splitw -c $LIMIX_GITHUB -e "SPLIT_HOME=$LIMIX_GITHUB" -d;
+$cmd selectw -t $session:2
 fi
 
 # 挂载会话
