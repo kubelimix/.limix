@@ -1,6 +1,6 @@
 alias bin="cd $LIMIX_BIN"
-alias h="cd $SPLIT_HOME"
 alias hs="export SPLIT_HOME=`pwd`"
+alias h="cd $SPLIT_HOME"
 alias opt="cd $LIMIX_OPT"
 alias github="cd $LIMIX_GITHUB"
 alias wiki="cd $LIMIX_WIKI"
